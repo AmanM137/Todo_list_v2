@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb+srv://aman20012004:Test123@cluster0.pdeuvwg.mongodb.net/todolistDB').then(() => {
+mongoose.connect('process.env.DB_URL').then(() => {
   console.log("Connected to Database");
 }).catch((err) => {
   console.log("Not Connected to Database ERROR! ", err);
